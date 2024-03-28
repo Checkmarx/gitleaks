@@ -32,6 +32,7 @@ func HashicorpField() *config.Rule {
 		RuleID:      "hashicorp-tf-password",
 		Regex:       generateSemiGenericRegex(keywords, fmt.Sprintf(`"%s"`, alphaNumericExtendedLong("8,20")), true),
 		Keywords:    keywords,
+		SecretGroup: 1,
 		Entropy:     3.5,
 		Allowlist: config.Allowlist{
 			StopWords: DefaultStopWords,
